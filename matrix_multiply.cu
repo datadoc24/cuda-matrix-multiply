@@ -72,7 +72,7 @@ void printMatrix(float* matrix, int rows, int cols) {
 
 int main(int argc, char *argv[]) {
     if (argc < 2) {
-        printf("Usage: %s <dimenion of square matrix>\n", argv[0]);
+        printf("Usage: %s <dimension of square matrix>\n", argv[0]);
         return 1;
     }
 
@@ -142,7 +142,13 @@ int main(int argc, char *argv[]) {
     printf("\nMatrix dimensions: %dx%d * %dx%d = %dx%d\n", numARows, numAColumns, numBRows, numBColumns, numARows, numBColumns);
     printf("GPU time: %.2f ms\n", gpu_time);
     printf("CPU time: %.2f ms\n", cpu_time);
-    printf("Speedup: %.2fx\n", cpu_time / gpu_time);
+    
+    if (cpu_time/gpu_time < 1){
+            printf("\033[1;31mGPU slower\033[0m - speedup x %.2fx\n", cpu_time/gpu_time);
+    }
+    else {
+            printf("\033[1;32mGPU faster!\033[0m - speedup x %.2fx\n", cpu_time/gpu_time);
+    }
 
     bool correct = true;
     float tolerance = 1e-3;
