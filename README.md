@@ -3,10 +3,10 @@ Multiplies 2 square matrices using the CPU and CUDA and compares the time taken.
 
 **Instructions**
 
-Use a Linux host with an Nvidia CUDA-compatible GPU, and the CUDA toolkit, installed. [See here for details](https://docs.nvidia.com/cuda/cuda-installation-guide-linux/)
-Run *nvidia-smi* to see that your GPU is detected and the expected CUDA version is available
-Clone this repo
-Ensure that nvcc is available on your path (typically: export PATH=/usr/local/cuda/bin:$PATH, then run *which nvcc* to check)
+- Use a Linux host with an Nvidia CUDA-compatible GPU, and the CUDA toolkit, installed. [See here for details](https://docs.nvidia.com/cuda/cuda-installation-guide-linux/)
+- Run *nvidia-smi* to see that your GPU is detected and the expected CUDA version is available.
+- Clone this repo to a working directory.
+- Ensure that nvcc is available on your path (typically: export PATH=/usr/local/cuda/bin:$PATH, then run *which nvcc* to check)
 ```
 cd cuda-matrix-multiply
 make
